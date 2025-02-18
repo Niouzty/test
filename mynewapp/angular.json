@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mynewapp": {
+    "angularTP2siteweb": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mynewapp",
+            "outputPath": "dist/angular-tp2siteweb",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -26,10 +26,8 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -64,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mynewapp:build:production"
+              "buildTarget": "angularTP2siteweb:build:production"
             },
             "development": {
-              "buildTarget": "mynewapp:build:development"
+              "buildTarget": "angularTP2siteweb:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,10 +83,8 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -98,8 +94,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "05ca2d9d-a6f4-4888-9b00-b3ae4e503813"
   }
 }

@@ -1,29 +1,26 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { HeroSectionComponent } from './components/hero/hero.component';
+import { ServicesComponent } from './components/services/services.component';
+import { TestimonialComponent } from './components/testimonials/testimonial.component';
+import { FooterComponent } from './components/footer/footer.component';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'angularTP2siteweb' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angularTP2siteweb');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angularTP2siteweb');
-  });
-});
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    RouterOutlet, 
+    HeaderComponent,
+    HeroSectionComponent,
+    ServicesComponent,
+    TestimonialComponent,
+    FooterComponent,
+  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'angular';
+}
